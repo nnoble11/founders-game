@@ -51,7 +51,9 @@ export default function ChipVideo({ progress }: ChipVideoProps) {
         }
       }}
       // The clip hides the white bar baked into the file's right edge.
-      className="h-[38svh] w-auto max-w-[92vw] object-contain [clip-path:inset(0_4%_0_0)] md:h-[70svh]"
+      // Mobile: the chips are ~10% of the video frame's width, so the frame
+      // must overflow the viewport (clipped by the hero) for them to read.
+      className="w-[260vw] max-w-none object-contain [clip-path:inset(0_4%_0_0)] md:h-[70svh] md:w-auto md:max-w-[92vw]"
     />
   );
 }
