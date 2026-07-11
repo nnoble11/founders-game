@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useMotionValueEvent, type MotionValue } from "framer-motion";
 
 type ChipVideoProps = {
@@ -33,6 +33,34 @@ export default function ChipVideo({ progress }: ChipVideoProps) {
 
   useMotionValueEvent(progress, "change", seek);
 
+  // Mobile browsers never decode or paint a frame for a video that hasn't
+  // played, so seeking alone leaves it invisible. A muted play() + pause()
+  // primes the decoder. If even muted autoplay is blocked (e.g. Low Power
+  // Mode), the first touch retries it.
+  const primed = useRef(false);
+
+  const prime = () => {
+    const video = videoRef.current;
+    if (!video || primed.current) return;
+    video
+      .play()
+      .then(() => {
+        primed.current = true;
+        video.pause();
+        seek(progress.get());
+      })
+      .catch(() => {
+        // Blocked; the touchstart listener below will retry.
+      });
+  };
+
+  useEffect(() => {
+    const onTouch = () => prime();
+    window.addEventListener("touchstart", onTouch, { passive: true });
+    return () => window.removeEventListener("touchstart", onTouch);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <video
       ref={videoRef}
@@ -42,7 +70,10 @@ export default function ChipVideo({ progress }: ChipVideoProps) {
       preload="auto"
       disablePictureInPicture
       aria-hidden
-      onLoadedMetadata={() => seek(progress.get())}
+      onLoadedMetadata={() => {
+        seek(progress.get());
+        prime();
+      }}
       onSeeked={() => {
         const video = videoRef.current;
         if (video && pendingTime.current !== null) {
