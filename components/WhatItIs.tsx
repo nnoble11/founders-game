@@ -6,9 +6,11 @@ export default function WhatItIs() {
       <Reveal>
         <p className="eyebrow mb-10">01 — The game</p>
         <p className="text-3xl leading-snug md:text-5xl md:leading-tight">
-          Free-to-play poker nights that seat founders and investors at the
-          same table. <span className="text-bone/50">No buy-in, ever.</span>{" "}
-          Every table is curated.
+          Networking sucks. Poker doesn&apos;t.{" "}
+          <span className="text-bone/50">
+            Invite-only poker. Founders and investors at the same table. There
+            is no buy-in.
+          </span>
         </p>
       </Reveal>
     </section>

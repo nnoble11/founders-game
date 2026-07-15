@@ -38,7 +38,7 @@ export default function Footer() {
         </nav>
       </div>
       <p className="mx-auto mt-10 max-w-5xl text-xs leading-relaxed text-bone/35">
-        Founders Game events are private, application-based social events.
+        Founders Game events are private, invitation-based social events.
         They are free to attend, with no buy-in. Nothing on this site is an
         offer of securities or investment advice.
       </p>

@@ -10,9 +10,9 @@ const archivo = Archivo({
 });
 
 export const metadata: Metadata = {
-  title: "Founders Game — apply for a seat",
+  title: "Founders Game — invite-only poker",
   description:
-    "Free-to-play poker nights that seat founders and investors at the same table. No buy-in, ever. Every table is curated.",
+    "Invite-only poker. Founders and investors at the same table. There is no buy-in.",
 };
 
 export default function RootLayout({
