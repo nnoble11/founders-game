@@ -1,17 +1,17 @@
 # CLAUDE.md — Founders Game Website
 
 ## What this project is
-Founders Game hosts application-based, no-buy-in poker nights that put
+Founders Game hosts invite-only, no-buy-in poker nights that put
 startup founders and investors at the same table. Players never pay
 anything; revenue comes from sponsorships and dealflow. This repo is a
 single-page marketing site. It is NOT a poker app — no gameplay, no
 payments, no gambling functionality of any kind.
 
 Note on naming: the brand on this site is "Founders Game" (hero reads
-FOUNDER / GAMES around the chips). Domains owned: foundersgame.com and
+FOUNDERS / GAME around the chips). Domains owned: foundersgame.com and
 founderspoker.com.
 
-## The site is ONE page with four sections, in this order
+## The site is ONE page with five sections, in this order
 
 ### 1. Hero — the scroll-driven chips (the signature element)
 - Full-viewport hero. Center: three 3D poker chips (will provide rendered video later).
@@ -19,33 +19,45 @@ founderspoker.com.
   one chip descends, the third stays anchored (so as the user scrolls the video "plays").
   Motion is bound directly to scroll position (scrubbed, not
   time-triggered) so scrolling back reverses it.
-- Flanking the chips in a modern, very bold sans-serif: "FOUNDER" on the
-  left, "GAMES" on the right. Huge type — each word roughly 12–15vw,
-  vertically centered, tight tracking. On mobile, stack: FOUNDER above
-  the chips, GAMES below.
+- Flanking the chips in a modern, very bold sans-serif: "FOUNDERS" on
+  the left, "GAME" on the right. Huge type — each word roughly 12–15vw,
+  vertically centered, tight tracking. On mobile, stack: FOUNDERS above
+  the chips, GAME below.
 
-### 2. What Founders Game is
-Short section. 2–3 sentences max, large readable type:
-free-to-play poker nights that seat founders and investors at the same
-table. No buy-in, ever. Every table is curated.
+### 2. The game (01)
+Short section, large readable type. Lead line — the first thing seen
+after scrolling past the hero: "Networking sucks. Poker doesn't."
+Supporting line (dimmed): invite-only poker, founders and investors at
+the same table, there is no buy-in.
 
-### 3. Why it was made
-Short narrative section. The premise: the best deals don't start in
-pitch meetings — they start in rooms where people actually talk. Poker
-is the excuse; the table is the product. Keep it to one short paragraph
-plus optionally one pull-quote-style line. Confident, no hype.
+### 3. Game 001 · San Francisco (02)
+The next event, stated flat: date, seat count, venue character (never
+the address — "Location shared with confirmed seats" is the strongest
+exclusivity signal on the page), dealers, dinner, open bar, and the
+prize figure. Display pull-quote: "Doors at six. Cards at seven. One
+winner." The numbering (Game 001, 002, …) quietly promises a future
+archive — a later "Previous Games" page gets photos and the winner's
+name, nothing else (a results page, not a recap blog).
 
-### 4. How to get involved
-Two paths, side by side (stacked on mobile):
-- "Apply for a seat" — primary CTA. Links to the application form
-  (inline section or modal; inline preferred for MVP).
-- "Sponsor a table" — secondary CTA. mailto link or short inquiry form.
-Application form fields and data handling: see below.
+### 4. The season (03)
+The standing-game positioning: one-off founder tournaments come and go;
+this is the standing game — monthly tables, a season leaderboard, one
+final table a year. Display line: "Nine seats a table. Every seat is
+decided." Ends with the only player path in: "Seats are by invitation."
+plus the hello@ email. No application form.
+
+### 5. Sponsors (04)
+Single card: "Sponsor a table. One name per night." mailto CTA to
+sponsors@foundersgame.com.
 
 Footer: minimal — logo mark, contact email, privacy policy link,
 disclaimer line (see Copy guardrails).
 
-## Application form fields
+## Application form (DORMANT — not on the page)
+The site is invite-only for now; there is no application. The form
+below was built and still lives in the repo (components/ApplicationForm.tsx,
+app/actions.ts) but is unmounted. Keep it compiling; it may return as a
+request-an-invite form. If it comes back:
 Structured fields only, no resume uploads. All applicants:
 - Full name, email, LinkedIn URL, city
 - Role: founder / investor / operator (branches the form)
@@ -64,31 +76,36 @@ Under 2 minutes to complete. Conditional fields, not separate pages.
 Every field maps to a clean column — this data feeds curation.
 
 
-## Game tiers and prizes (context for copy)
-Prizes are always sponsor-funded, never cash to individuals:
-- Early-stage / student tables: non-dilutive startup grant to the
-  winner's COMPANY (e.g., "[Sponsor] Founder Grant"), cloud credits, or
-  services package. If an investor wins a mixed table, they choose which
-  founder at the table receives the grant.
-- Mid-tier tables: sponsor-provided experience prizes.
-- Exclusive tables: trophy, engraved chip, champions board, or donation
-  to the winner's chosen charity. No monetary prizes at this tier.
-Copy may reference grants but NEVER as "winnings," "prize money," or
-"prize pool." "Win a grant for your startup" — yes. "Win $5,000" — never.
+## Prizes (context for copy)
+Prizes are sponsor-funded. Cash prizes are permitted and are stated
+flat, as fact — "$5,000 across the final three" — never with hype and
+never framed as gambling proceeds. Luxury never acts surprised by its
+own generosity: no exclamation points, no "win big," no "up to."
+Grants, credits, trophies, and charity donations remain fine where they
+fit. Still never: "winnings," "prize money," "prize pool," "jackpot,"
+"cash out." Prize figures are placeholders until the sponsor is locked;
+swap in the real number, keep the flat delivery.
 
 ## Brand and voice
 - Vibe: modern and bold, private-game energy. Confident and spare —
   scarcity and understatement over hype. Not casino, not corporate.
+  Insiders know; that's the point. The page says "we're not selling you
+  anything" without ever saying it.
 - Copy is short, sentence case, no exclamation points.
-- Words we like: table, seat, apply for a seat, the game, dealflow,
-  the room, founder grant.
-- Words to avoid: bet, gamble, casino, jackpot, win money, cash out,
-  winnings, prize pool, networking event (say "the table" instead).
-- Application framing: selective, not bureaucratic. "Apply for a seat."
-  Visible scarcity ("Tables seat 9."). Never "sign up" or "join the
-  waitlist."
+- Words we like: table, seat, the game, the standing game, the season,
+  dealflow, the room, one winner.
+- BANNED from the page forever — if any of these appear, the illusion
+  dies: exclusive, luxury, premium, curated, elevated, unforgettable,
+  experience. Also still avoid: bet, gamble, casino, jackpot, cash out,
+  winnings, prize pool.
+- "Networking" appears only to be dismissed ("Networking sucks. Poker
+  doesn't.") — never as a description of what this is.
+- Access framing: invite-only. "Seats are by invitation." Visible
+  scarcity ("Nine seats a table.", "27 seats"). Never "sign up," "join
+  the waitlist," or "apply" (the application is dormant). Withhold the
+  venue: "Location shared with confirmed seats."
 - Never mention data collection, graphs, or databases in user-facing
-  copy — externally it's "every table is curated."
+  copy — externally it's "every seat is decided."
 
 ## Visual design
 - Direction: modern bold. Massive condensed/grotesque sans display type
@@ -109,7 +126,8 @@ Copy may reference grants but NEVER as "winnings," "prize money," or
 - Three.js via @react-three/fiber + @react-three/drei for the hero
 - framer-motion for scroll progress and section reveals (subtle only)
 - Deploy: Vercel. Analytics: Vercel Analytics or Plausible.
-- Forms: server action → Airtable API. No database, no CMS for MVP.
+- Forms: none mounted for MVP (application is dormant; its server
+  action → Airtable code stays in the repo). No database, no CMS.
 
 ## Conventions
 - Components in /components, PascalCase, one per file
@@ -123,11 +141,11 @@ Copy may reference grants but NEVER as "winnings," "prize money," or
 ## Copy guardrails (legal-sensitive)
 - Always "free to attend" and "no buy-in"
 - Never promise investment outcomes, returns, or introductions-for-fees
-- Prize language per Game tiers section — grants/credits/trophies only
+- Prize language per Prizes section — sponsor-funded, stated flat
 - Stub a /rules page link in the footer (official contest rules:
   eligibility, no purchase necessary, prizes, tax note) — final text
   comes from a lawyer
-- Footer disclaimer: events are private, application-based social
+- Footer disclaimer: events are private, invitation-based social
   events; nothing on this site is an offer of securities or investment
   advice
 
@@ -135,7 +153,5 @@ Copy may reference grants but NEVER as "winnings," "prize money," or
 - Hero scroll scrub is smooth (60fps on a mid-tier laptop, no jank on
   iPhone), reverses cleanly, and has a reduced-motion static fallback
 - Lighthouse 90+ mobile for performance and accessibility despite the 3D
-- Applications land in Airtable with all fields intact (test founder,
-  investor, and operator branches end to end)
 - A cold visitor understands what this is within one screen of scrolling
-  and can find "Apply for a seat" within 10 seconds
+  and knows seats are by invitation within 10 seconds
