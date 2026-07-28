@@ -23,6 +23,18 @@ position — `ChipVideo` maps hero scroll progress to `currentTime`, so
 scrolling back plays it in reverse. `prefers-reduced-motion` collapses
 the hero to a single viewport frozen at a mid-scroll frame.
 
+The clip must be encoded all-intra (every frame a keyframe): a seek can
+only paint after decoding from the previous keyframe, so sparse
+keyframes make the scrub stutter. When swapping in a new render:
+
+```bash
+ffmpeg -i render.mp4 -c:v libx264 -preset veryslow -crf 22 -g 1 \
+  -pix_fmt yuv420p -movflags +faststart -an public/test01.mp4
+```
+
+If the new clip's frame rate differs from 24 fps, update `FPS` in
+`components/ChipVideo.tsx`.
+
 ## Application form (dormant)
 
 The site is invite-only for now, so the application form is unmounted.

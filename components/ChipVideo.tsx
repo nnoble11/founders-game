@@ -8,6 +8,12 @@ type ChipVideoProps = {
   progress: MotionValue<number>;
 };
 
+// The clip's frame rate. Seek targets snap to frame boundaries so scrubbing
+// never issues two seeks that decode the same frame. Update alongside the
+// asset — and keep future renders all-intra (ffmpeg -g 1): with sparse
+// keyframes every seek decodes the whole GOP and the scrub stutters.
+const FPS = 24;
+
 /**
  * The rendered chip video, scrubbed by scroll. Seeks are serialized: while
  * the browser is still seeking, the latest target is parked and applied on
@@ -16,6 +22,7 @@ type ChipVideoProps = {
 export default function ChipVideo({ progress }: ChipVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const pendingTime = useRef<number | null>(null);
+  const lastFrame = useRef(-1);
 
   const seek = (p: number) => {
     const video = videoRef.current;
@@ -24,10 +31,14 @@ export default function ChipVideo({ progress }: ChipVideoProps) {
     }
     // Stay a hair off the end so the final frame remains visible.
     const t = Math.min(Math.max(p, 0), 0.999) * video.duration;
+    const frame = Math.round(t * FPS);
+    if (frame === lastFrame.current) return;
+    lastFrame.current = frame;
+    const target = Math.min(frame / FPS, 0.999 * video.duration);
     if (video.seeking) {
-      pendingTime.current = t;
+      pendingTime.current = target;
     } else {
-      video.currentTime = t;
+      video.currentTime = target;
     }
   };
 
