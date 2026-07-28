@@ -34,7 +34,6 @@ export default function Hero() {
 
   const founderDrift = useTransform(smooth, [0, 1], ["0vw", "-2.5vw"]);
   const gamesDrift = useTransform(smooth, [0, 1], ["0vw", "2.5vw"]);
-  const cueOpacity = useTransform(smooth, [0, 0.12], [1, 0]);
 
   return (
     <section
@@ -70,14 +69,6 @@ export default function Hero() {
           <ChipVideo progress={progress} />
         </div>
 
-        {/* Scroll cue */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2"
-          style={reduceMotion ? undefined : { opacity: cueOpacity }}
-          aria-hidden
-        >
-          <span className="eyebrow">Scroll</span>
-        </motion.div>
       </div>
     </section>
   );
