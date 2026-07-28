@@ -1,13 +1,13 @@
 # Founders Game — site
 
-Single-page marketing site for Founders Game: application-based, no-buy-in
-poker nights seating founders and investors at the same table.
+Single-page marketing site for Founders Game: invite-only, no-buy-in
+poker nights seating founders and investors at the same table. Seats are
+by invitation; there is no application or waitlist on the site.
 
 ## Stack
 
-Next.js (App Router) + TypeScript + Tailwind CSS v4, Three.js via
-@react-three/fiber for the hero chips, framer-motion for scroll scrub and
-section reveals. Deploys on Vercel.
+Next.js (App Router) + TypeScript + Tailwind CSS v4, framer-motion for
+the hero scroll scrub and section reveals. Deploys on Vercel.
 
 ## Develop
 
@@ -16,16 +16,18 @@ npm install
 npm run dev
 ```
 
-## Application form backend
+## Hero
 
-The form posts through a server action (`app/actions.ts`). With no env vars
-set it logs submissions server-side and still succeeds, so the site works end
-to end before the backend decision is final. To wire up Airtable, copy
-`.env.example` to `.env.local` and fill in the keys.
+The chips are a rendered video (`public/test01.mp4`) scrubbed by scroll
+position — `ChipVideo` maps hero scroll progress to `currentTime`, so
+scrolling back plays it in reverse. `prefers-reduced-motion` collapses
+the hero to a single viewport frozen at a mid-scroll frame.
 
-## Notes
+## Application form (dormant)
 
-- The three hero chips are procedural Three.js placeholders; a rendered chip
-  video will replace them later. The scroll scrub plumbing stays the same.
-- `prefers-reduced-motion` freezes the hero at a static frame and disables
-  reveals; no-WebGL browsers get a flat CSS fallback.
+The site is invite-only for now, so the application form is unmounted.
+`components/ApplicationForm.tsx` and its server action (`app/actions.ts`)
+stay in the repo and must keep compiling in case it returns as a
+request-an-invite form. With no env vars set the action logs submissions
+server-side and still succeeds; to wire up Airtable, copy `.env.example`
+to `.env.local` and fill in the keys.
