@@ -31,8 +31,13 @@ export default function ChipVideo({ progress }: ChipVideoProps) {
     }
     // Stay a hair off the end so the final frame remains visible.
     const t = Math.min(Math.max(p, 0), 0.999) * video.duration;
-    const frame = Math.round(t * FPS);
-    if (frame === lastFrame.current) return;
+    const exact = t * FPS;
+    // Deadband: after scrolling stops, the spring's settle tail creeps less
+    // than a frame further — without hysteresis that creep can tip the
+    // rounding over one more frame, a visible late click. Real motion always
+    // clears this threshold.
+    if (Math.abs(exact - lastFrame.current) < 0.75) return;
+    const frame = Math.round(exact);
     lastFrame.current = frame;
     const target = Math.min(frame / FPS, 0.999 * video.duration);
     if (video.seeking) {
