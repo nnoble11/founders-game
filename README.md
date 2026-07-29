@@ -35,6 +35,19 @@ ffmpeg -i render.mp4 -c:v libx264 -preset veryslow -crf 22 -g 1 \
 If the new clip's frame rate differs from 24 fps, update `FPS` in
 `components/ChipVideo.tsx`.
 
+## Game 001 archival plate (trial)
+
+The Game 001 section shows a duotone photograph (`public/game001.jpg`).
+The bone-on-black duotone is applied in CSS (grayscale + a bone-colored
+multiply overlay), so the file itself should be a plain high-contrast
+grayscale scan — swap the file and the treatment follows, no code
+change. The current file is a placeholder frame from the chip render;
+the intended image is the 1943 OWI boarding-house poker game photograph
+from the Library of Congress [FSA/OWI collection](https://www.loc.gov/pictures/collection/fsa/)
+(public domain — download the highest-res JPEG from the item page,
+export as grayscale JPEG ~1920px wide). Update the `alt` text in
+`components/GameOne.tsx` if a different photograph is chosen.
+
 ## Application form (dormant)
 
 The site is invite-only for now, so the application form is unmounted.
