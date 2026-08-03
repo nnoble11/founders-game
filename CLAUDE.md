@@ -49,7 +49,8 @@ email anywhere on the page.
 ## Application form (DORMANT — not on the page)
 The site is invite-only for now; there is no application. The form
 below was built and still lives in the repo (components/ApplicationForm.tsx,
-app/actions.ts) but is unmounted. Keep it compiling; it may return as a
+app/actions.ts) but is unmounted and has no persistence integration. Keep it
+compiling; it may return as a
 request-an-invite form. If it comes back:
 Structured fields only, no resume uploads. All applicants:
 - Full name, email, LinkedIn URL, city
@@ -119,8 +120,8 @@ swap in the real number, keep the flat delivery.
 - Three.js via @react-three/fiber + @react-three/drei for the hero
 - framer-motion for scroll progress and section reveals (subtle only)
 - Deploy: Vercel. Analytics: Vercel Analytics or Plausible.
-- Forms: none mounted for MVP (application is dormant; its server
-  action → Airtable code stays in the repo). No database, no CMS.
+- Forms: none mounted for MVP (the application is dormant and submissions are
+  rejected by its server action). No database, no CMS.
 
 ## Conventions
 - Components in /components, PascalCase, one per file

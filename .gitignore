@@ -10,3 +10,14 @@ build/
 next-env.d.ts
 .DS_Store
 screenshots/
+
+# Local card-art iterations; the canonical asset is public/invite-card-back.png.
+public/invite-card-back-v*.png
+
+# Local Apple signing material (credentials belong in environment variables).
+AppleWWDRCAG4.cer
+apple-pass-cert.pem
+apple-pass-key.pem
+apple-pass.csr
+apple-wwdr.pem
+pass.cer
