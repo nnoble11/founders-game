@@ -119,6 +119,10 @@
   user-select: none;
 }
 
+.invite-card-back .invite-card-image {
+  transform: scale(1.2);
+}
+
 .invite-card-front::after {
   content: "";
   position: absolute;
