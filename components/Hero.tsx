@@ -48,17 +48,17 @@ export default function Hero() {
       <div className="sticky top-0 flex h-svh items-center overflow-hidden">
         {/* Display type — above the video so its black background never cuts the words off */}
         {/* Two equal halves split at the chip center: FOUNDERS ends and GAME
-            starts at the same 5vw distance from the centerline. */}
+            starts at the same 7u distance from the centerline. */}
         <div className="relative z-20 flex w-full flex-col items-center justify-center px-[4vw] md:grid md:grid-cols-2 md:px-0">
           <motion.h1
-            className="display text-[calc(var(--u)*13)] md:justify-self-end md:pr-[calc(var(--u)*5)] md:text-[calc(var(--u)*6)]"
+            className="display text-[calc(var(--u)*13)] md:justify-self-end md:pr-[calc(var(--u)*7)] md:text-[calc(var(--u)*6)]"
             style={reduceMotion ? undefined : { x: founderDrift }}
           >
             Founders
           </motion.h1>
           <div className="h-[calc(var(--u)*82)] md:hidden" aria-hidden />
           <motion.p
-            className="display text-[calc(var(--u)*13)] md:justify-self-start md:pl-[calc(var(--u)*5)] md:text-[calc(var(--u)*6)]"
+            className="display text-[calc(var(--u)*13)] md:justify-self-start md:pl-[calc(var(--u)*7)] md:text-[calc(var(--u)*6)]"
             style={reduceMotion ? undefined : { x: gamesDrift }}
           >
             Game
