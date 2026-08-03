@@ -6,11 +6,11 @@ export default function Footer() {
       <div className="mx-auto flex max-w-5xl flex-col gap-8 md:flex-row md:items-start md:justify-between">
         <span className="display text-lg">Founders Game</span>
         <nav className="flex flex-col gap-2 text-sm text-bone/60 md:items-end" aria-label="Footer">
-          <Link href="/privacy" className="hover:text-bone">
-            Privacy policy
-          </Link>
           <Link href="/rules" className="hover:text-bone">
             Official rules
+          </Link>
+          <Link href="/privacy" className="hover:text-bone">
+            Privacy policy
           </Link>
         </nav>
       </div>
