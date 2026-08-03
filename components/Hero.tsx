@@ -2,12 +2,10 @@
 
 import { useRef } from "react";
 import {
-  motion,
   useMotionValue,
   useReducedMotion,
   useScroll,
   useSpring,
-  useTransform,
 } from "framer-motion";
 import ChipVideo from "./ChipVideo";
 
@@ -32,8 +30,6 @@ export default function Hero() {
   const frozen = useMotionValue(0.35);
   const progress = reduceMotion ? frozen : smooth;
 
-  const founderDrift = useTransform(smooth, [0, 1], ["0vw", "-2.5vw"]);
-  const gamesDrift = useTransform(smooth, [0, 1], ["0vw", "2.5vw"]);
 
   return (
     <section
@@ -50,19 +46,13 @@ export default function Hero() {
         {/* Two equal halves split at the chip center: FOUNDERS ends and GAME
             starts at the same 7u distance from the centerline. */}
         <div className="relative z-20 flex w-full flex-col items-center justify-center px-[4vw] md:grid md:grid-cols-2 md:px-0">
-          <motion.h1
-            className="display text-[calc(var(--u)*13)] md:justify-self-end md:pr-[calc(var(--u)*7)] md:text-[calc(var(--u)*6)]"
-            style={reduceMotion ? undefined : { x: founderDrift }}
-          >
+          <h1 className="display text-[calc(var(--u)*13)] md:justify-self-end md:pr-[calc(var(--u)*7)] md:text-[calc(var(--u)*6)]">
             Founders
-          </motion.h1>
+          </h1>
           <div className="h-[calc(var(--u)*82)] md:hidden" aria-hidden />
-          <motion.p
-            className="display text-[calc(var(--u)*13)] md:justify-self-start md:pl-[calc(var(--u)*7)] md:text-[calc(var(--u)*6)]"
-            style={reduceMotion ? undefined : { x: gamesDrift }}
-          >
+          <p className="display text-[calc(var(--u)*13)] md:justify-self-start md:pl-[calc(var(--u)*7)] md:text-[calc(var(--u)*6)]">
             Game
-          </motion.p>
+          </p>
         </div>
 
         {/* Chips — rendered video as the background layer, scrubbed by scroll, inert to pointers */}
