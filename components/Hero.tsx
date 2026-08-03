@@ -38,7 +38,11 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className={reduceMotion ? "relative h-svh" : "relative h-[300vh]"}
+      // --u is the hero's single scale unit: every size below (type, chip
+      // video, spacing) is a multiple of it, so the word/chip ratio is
+      // identical at any viewport. 1.6 is the reference aspect; wider
+      // screens scale from height, narrower ones from width.
+      className={`[--u:min(1vw,1.6svh)] ${reduceMotion ? "relative h-svh" : "relative h-[300vh]"}`}
       aria-label="Founders Game"
     >
       <div className="sticky top-0 flex h-svh items-center overflow-hidden">
@@ -47,14 +51,14 @@ export default function Hero() {
             starts at the same 5vw distance from the centerline. */}
         <div className="relative z-20 flex w-full flex-col items-center justify-center px-[4vw] md:grid md:grid-cols-2 md:px-0">
           <motion.h1
-            className="display text-[13vw] md:justify-self-end md:pr-[5vw] md:text-[6vw]"
+            className="display text-[calc(var(--u)*13)] md:justify-self-end md:pr-[calc(var(--u)*5)] md:text-[calc(var(--u)*6)]"
             style={reduceMotion ? undefined : { x: founderDrift }}
           >
             Founders
           </motion.h1>
-          <div className="h-[38svh] md:hidden" aria-hidden />
+          <div className="h-[calc(var(--u)*82)] md:hidden" aria-hidden />
           <motion.p
-            className="display text-[13vw] md:justify-self-start md:pl-[5vw] md:text-[6vw]"
+            className="display text-[calc(var(--u)*13)] md:justify-self-start md:pl-[calc(var(--u)*5)] md:text-[calc(var(--u)*6)]"
             style={reduceMotion ? undefined : { x: gamesDrift }}
           >
             Game
