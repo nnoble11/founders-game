@@ -10,21 +10,6 @@ export default function GameOne() {
           Location shared with confirmed seats.
         </p>
       </Reveal>
-      {/* Archival plate. The duotone (grayscale + bone multiply) happens in
-          CSS, so the image ships as a plain grayscale scan — swap
-          public/game001.jpg for the real print, no code change. Currently a
-          placeholder frame from the chip render until the LOC scan lands. */}
-      <Reveal delay={0.05}>
-        <figure className="relative isolate mt-16 overflow-hidden">
-          <img
-            src="/game001.jpg"
-            alt="A poker game in a boarding house, 1943 — seven players around a table, mid-hand"
-            className="w-full grayscale contrast-125"
-          />
-          <div className="absolute inset-0 bg-bone mix-blend-multiply" aria-hidden />
-        </figure>
-      </Reveal>
-
       <Reveal delay={0.1}>
         <p className="display mt-16 text-4xl md:text-6xl">
           Doors at six. Cards at seven.
