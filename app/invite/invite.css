@@ -70,10 +70,6 @@
   border-radius: clamp(0.85rem, 3vw, 1.2rem);
 }
 
-.invite-card-float:not(.is-revealed) {
-  animation: invite-float 3.6s ease-in-out infinite;
-}
-
 .invite-card-tilt {
   --invite-rx: 0deg;
   --invite-ry: 0deg;
@@ -226,11 +222,6 @@
   cursor: not-allowed;
 }
 
-@keyframes invite-float {
-  0%, 100% { transform: translateY(0) rotate(-0.35deg); }
-  50% { transform: translateY(-0.65rem) rotate(0.35deg); }
-}
-
 @keyframes invite-pulse {
   0%, 100% { opacity: 0.42; }
   50% { opacity: 0.88; }
@@ -254,7 +245,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .invite-card-float,
   .invite-prompt {
     animation: none;
   }

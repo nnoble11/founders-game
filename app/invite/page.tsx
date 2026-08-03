@@ -1,5 +1,7 @@
 import InvitationExperience from "@/components/InvitationExperience";
 
+const DEFAULT_LUMA_URL = "https://luma.com/z9j4dk9r";
+
 function httpUrl(value: string | undefined) {
   if (!value) return undefined;
 
@@ -19,7 +21,9 @@ export default function InvitePage() {
       cardFaceUrl={
         httpUrl(process.env.INVITE_CARD_FACE_URL) ?? "/invite-card-face.png"
       }
-      lumaUrl={httpUrl(process.env.NEXT_PUBLIC_LUMA_URL)}
+      lumaUrl={
+        httpUrl(process.env.NEXT_PUBLIC_LUMA_URL) ?? DEFAULT_LUMA_URL
+      }
     />
   );
 }

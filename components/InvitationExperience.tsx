@@ -8,7 +8,7 @@ type DeviceOrientationPermissionEvent = typeof DeviceOrientationEvent & {
 
 type InvitationExperienceProps = {
   cardFaceUrl: string;
-  lumaUrl?: string;
+  lumaUrl: string;
 };
 
 const MAX_POINTER_TILT = 8;
@@ -171,23 +171,16 @@ export default function InvitationExperience({
             San Francisco {"\u00b7"} Game I
           </p>
           <p>By invitation only</p>
-          {lumaUrl ? (
-            <a
-              className="invite-rsvp"
-              href={lumaUrl}
-              rel="noopener"
-              tabIndex={revealed ? 0 : -1}
-              target="_blank"
-            >
-              Take your seat
-              <span aria-hidden="true">{"\u2197"}</span>
-            </a>
-          ) : (
-            <span className="invite-rsvp is-disabled" aria-disabled="true">
-              RSVP link coming soon
-            </span>
-          )}
-
+          <a
+            className="invite-rsvp"
+            href={lumaUrl}
+            rel="noopener"
+            tabIndex={revealed ? 0 : -1}
+            target="_blank"
+          >
+            Take your seat
+            <span aria-hidden="true">{"\u2197"}</span>
+          </a>
         </div>
       </section>
     </main>

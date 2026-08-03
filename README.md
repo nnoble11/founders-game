@@ -31,9 +31,10 @@ The unlisted invitation uses one universal URL:
 /invite
 ```
 
-Set `NEXT_PUBLIC_LUMA_URL` to the event RSVP page. The supplied, cropped card
-artwork is stored at `public/invite-card-face.png`; `INVITE_CARD_FACE_URL` can
-override it with an absolute URL. The approved diamond back is stored at
+The current Luma RSVP page is built in, and `NEXT_PUBLIC_LUMA_URL` can override
+it for a future event. The supplied, cropped card artwork is stored at
+`public/invite-card-face.png`; `INVITE_CARD_FACE_URL` can override it with an
+absolute URL. The approved diamond back is stored at
 `public/invite-card-back.png` and is also used for the link preview. The route
 is excluded from search indexing so the unlisted invitation stays private.
 Luma handles registration, confirmation email, calendar invites, mobile wallet
