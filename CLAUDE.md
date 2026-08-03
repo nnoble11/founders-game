@@ -11,7 +11,7 @@ Note on naming: the brand on this site is "Founders Game" (hero reads
 FOUNDERS / GAME around the chips). Domains owned: foundersgame.com and
 founderspoker.com.
 
-## The site is ONE page with five sections, in this order
+## The site is ONE page with four sections, in this order
 
 ### 1. Hero — the scroll-driven chips (the signature element)
 - Full-viewport hero. Center: three 3D poker chips (will provide rendered video later).
@@ -24,13 +24,14 @@ founderspoker.com.
   vertically centered, tight tracking. On mobile, stack: FOUNDERS above
   the chips, GAME below.
 
-### 2. The game (01)
-Short section, large readable type. Lead line — the first thing seen
+### 2. The game
+Short section, large readable type. No numbered eyebrows — sections
+flow without labels. Lead line — the first thing seen
 after scrolling past the hero: "Networking sucks. Poker doesn't."
 Supporting line (dimmed): invite-only poker, founders and investors at
 the same table, there is no buy-in.
 
-### 3. Game 001 · San Francisco (02)
+### 3. Game 001 · San Francisco
 The next event, stated flat: date, seat count, venue character (never
 the address — "Location shared with confirmed seats" is the strongest
 exclusivity signal on the page), dealers, dinner, open bar, and the
@@ -39,19 +40,20 @@ winner." The numbering (Game 001, 002, …) quietly promises a future
 archive — a later "Previous Games" page gets photos and the winner's
 name, nothing else (a results page, not a recap blog).
 
-### 4. The season (03)
+### 4. The season
 The standing-game positioning: one-off founder tournaments come and go;
 this is the standing game — monthly tables, a season leaderboard, one
 final table a year. Display line: "Nine seats a table. Every seat is
-decided." Ends with the only player path in: "Seats are by invitation."
-plus the hello@ email. No application form.
+decided." No application form, no email CTA — there is deliberately no
+contact path on the page; invitations happen entirely off-site.
 
-### 5. Sponsors (04)
-Single card: "Sponsor a table. One name per night." mailto CTA to
-sponsors@foundersgame.com.
+(A sponsors section previously closed the page; it was removed. Sponsor
+outreach happens off-site — don't reintroduce a sponsor CTA without
+being asked.)
 
-Footer: minimal — logo mark, contact email, privacy policy link,
-disclaimer line (see Copy guardrails).
+Footer: minimal — wordmark (text only, no logo mark), privacy policy
+link, official rules link, disclaimer line (see Copy guardrails). No
+email anywhere on the page.
 
 ## Application form (DORMANT — not on the page)
 The site is invite-only for now; there is no application. The form
@@ -78,7 +80,7 @@ Every field maps to a clean column — this data feeds curation.
 
 ## Prizes (context for copy)
 Prizes are sponsor-funded. Cash prizes are permitted and are stated
-flat, as fact — "$5,000 across the final three" — never with hype and
+flat, as fact — "$1,000 to first place" — never with hype and
 never framed as gambling proceeds. Luxury never acts surprised by its
 own generosity: no exclamation points, no "win big," no "up to."
 Grants, credits, trophies, and charity donations remain fine where they
@@ -101,7 +103,7 @@ swap in the real number, keep the flat delivery.
 - "Networking" appears only to be dismissed ("Networking sucks. Poker
   doesn't.") — never as a description of what this is.
 - Access framing: invite-only. "Seats are by invitation." Visible
-  scarcity ("Nine seats a table.", "27 seats"). Never "sign up," "join
+  scarcity ("Nine seats a table.", "18 seats"). Never "sign up," "join
   the waitlist," or "apply" (the application is dormant). Withhold the
   venue: "Location shared with confirmed seats."
 - Never mention data collection, graphs, or databases in user-facing
