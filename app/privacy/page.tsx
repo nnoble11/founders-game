@@ -17,11 +17,7 @@ export default function PrivacyPage() {
       </p>
       <p className="mt-4 leading-relaxed text-bone/70">
         A complete privacy policy will be published here before the first
-        table is dealt. Questions in the meantime:{" "}
-        <a href="mailto:hello@foundersgame.com" className="underline hover:text-bone">
-          hello@foundersgame.com
-        </a>
-        .
+        table is dealt.
       </p>
       <p className="mt-12">
         <Link href="/" className="btn-ghost">
