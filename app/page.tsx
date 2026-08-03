@@ -1,7 +1,5 @@
 import Hero from "@/components/Hero";
 import WhatItIs from "@/components/WhatItIs";
-import GameOne from "@/components/GameOne";
-import TheSeason from "@/components/TheSeason";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -9,8 +7,6 @@ export default function Home() {
     <main>
       <Hero />
       <WhatItIs />
-      <GameOne />
-      <TheSeason />
       <Footer />
     </main>
   );
