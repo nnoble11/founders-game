@@ -25,8 +25,15 @@ founderspoker.com.
   the chips, GAME below.
 
 ### 2. The statement
-One line, large readable type, nothing else:
+One line, large readable type:
 "Invite-only poker for founders and investors."
+
+Below it, dimmed and smaller, the only explanatory copy on the page
+(owner-written; don't wordsmith it into ad rhythm):
+"There's no buy-in. Games are intentionally small, two or three tables
+max. Games are tournament style, with a prize for the winner. The point
+is to get interesting people at a table and start interesting
+conversations."
 
 That's the entire pitch. Earlier iterations carried event details
 (Game 001 copy, "Doors at six. Cards at seven."), season positioning
@@ -132,8 +139,10 @@ swap in the real number, keep the flat delivery.
   eligibility, no purchase necessary, prizes, tax note) — final text
   comes from a lawyer
 - Footer disclaimer: events are private, invitation-based social
-  events; nothing on this site is an offer of securities or investment
-  advice
+  events, free to attend, no buy-in. (The "not an offer of securities
+  or investment advice" sentence was removed at the owner's request
+  2026-08-03 — flag it for lawyer review before any fundraising-related
+  copy appears on the site.)
 
 ## Definition of done
 - Hero scroll scrub is smooth (60fps on a mid-tier laptop, no jank on
