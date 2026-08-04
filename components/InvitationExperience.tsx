@@ -124,6 +124,13 @@ export default function InvitationExperience({
             Take your seat
             <span aria-hidden="true">{"\u2197"}</span>
           </a>
+          <a
+            className="invite-home-link"
+            href="/"
+            tabIndex={revealed ? 0 : -1}
+          >
+            Main site
+          </a>
         </div>
       </section>
     </main>

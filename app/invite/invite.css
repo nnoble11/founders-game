@@ -212,6 +212,28 @@
   outline-offset: 4px;
 }
 
+.invite-home-link {
+  margin-top: 0.15rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-bone) 20%, transparent);
+  color: color-mix(in srgb, var(--color-bone) 48%, transparent);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.8;
+  text-transform: uppercase;
+  transition: border-color 180ms ease, color 180ms ease;
+}
+
+.invite-home-link:hover {
+  border-color: var(--color-bone);
+  color: var(--color-bone);
+}
+
+.invite-home-link:focus-visible {
+  outline: 2px solid var(--color-bone);
+  outline-offset: 3px;
+}
+
 .invite-rsvp.is-disabled {
   opacity: 0.5;
   cursor: not-allowed;
