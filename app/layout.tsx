@@ -10,7 +10,7 @@ const archivo = Archivo({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://foundersgame.com"),
+  metadataBase: new URL("https://www.founders-game.com"),
   title: "Founders Game — invite-only poker",
   description:
     "Invite-only poker. Founders and investors at the same table. There is no buy-in.",
