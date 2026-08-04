@@ -1,10 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
-
-type DeviceOrientationPermissionEvent = typeof DeviceOrientationEvent & {
-  requestPermission?: () => Promise<"granted" | "denied">;
-};
+import { useCallback, useRef, useState } from "react";
 
 type InvitationExperienceProps = {
   cardFaceUrl: string;
@@ -12,7 +8,6 @@ type InvitationExperienceProps = {
 };
 
 const MAX_POINTER_TILT = 8;
-const MAX_DEVICE_TILT = 10;
 
 function clamp(value: number, min: number, max: number) {
   return Math.min(max, Math.max(min, value));
@@ -23,9 +18,7 @@ export default function InvitationExperience({
   lumaUrl,
 }: InvitationExperienceProps) {
   const tiltRef = useRef<HTMLSpanElement>(null);
-  const calibrationRef = useRef<{ beta: number; gamma: number } | null>(null);
   const [revealed, setRevealed] = useState(false);
-  const [orientationEnabled, setOrientationEnabled] = useState(false);
 
   const setTilt = useCallback(
     (rotateX: number, rotateY: number, sheenX = 50, sheenY = 50) => {
@@ -40,69 +33,14 @@ export default function InvitationExperience({
     [],
   );
 
-  useEffect(() => {
-    if (!orientationEnabled) return;
-
-    const handleOrientation = (event: DeviceOrientationEvent) => {
-      if (event.beta === null || event.gamma === null) return;
-
-      if (!calibrationRef.current) {
-        calibrationRef.current = { beta: event.beta, gamma: event.gamma };
-      }
-
-      const baseline = calibrationRef.current;
-      const beta = clamp(
-        (event.beta - baseline.beta) * 0.5,
-        -MAX_DEVICE_TILT,
-        MAX_DEVICE_TILT,
-      );
-      const gamma = clamp(
-        (event.gamma - baseline.gamma) * 0.5,
-        -MAX_DEVICE_TILT,
-        MAX_DEVICE_TILT,
-      );
-
-      setTilt(-beta, gamma, 50 + gamma * 2.5, 50 + beta * 2.5);
-    };
-
-    window.addEventListener("deviceorientation", handleOrientation, true);
-    return () => {
-      window.removeEventListener("deviceorientation", handleOrientation, true);
-      calibrationRef.current = null;
-    };
-  }, [orientationEnabled, setTilt]);
-
-  const requestOrientation = async () => {
-    if (typeof window === "undefined" || !("DeviceOrientationEvent" in window)) {
-      return;
-    }
-
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    const OrientationEvent = window.DeviceOrientationEvent as DeviceOrientationPermissionEvent;
-
-    try {
-      if (typeof OrientationEvent.requestPermission === "function") {
-        const permission = await OrientationEvent.requestPermission();
-        setOrientationEnabled(permission === "granted");
-      } else {
-        setOrientationEnabled(true);
-      }
-    } catch {
-      // The card still works with touch, keyboard, and pointer input.
-    }
-  };
-
   const toggleReveal = () => {
     if (revealed) {
       setRevealed(false);
-      setOrientationEnabled(false);
       setTilt(0, 0);
       return;
     }
 
     setRevealed(true);
-    void requestOrientation();
   };
 
   const handlePointerMove = (event: React.PointerEvent<HTMLButtonElement>) => {
@@ -168,7 +106,7 @@ export default function InvitationExperience({
         </button>
 
         <p className={revealed ? "invite-prompt is-hidden" : "invite-prompt"} aria-hidden={revealed}>
-          Tap to reveal
+          Tap
         </p>
 
         <div className={revealed ? "invite-actions is-visible" : "invite-actions"} aria-hidden={!revealed}>
