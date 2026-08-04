@@ -3,7 +3,7 @@ import path from "node:path";
 import { ImageResponse } from "next/og";
 
 export const alt = "Founders Game invitation card";
-export const size = { width: 1200, height: 630 };
+export const size = { width: 1000, height: 1493 };
 export const contentType = "image/png";
 export const runtime = "nodejs";
 
@@ -21,19 +21,21 @@ export default async function OpenGraphImage() {
         display: "flex",
         height: "100%",
         justifyContent: "center",
+        overflow: "hidden",
         width: "100%",
       }}
     >
       <img
         alt="Face-down Founders Game invitation card"
-        height="630"
+        height="1792"
         src={cardBackUrl}
         style={{
-          height: "630px",
-          objectFit: "contain",
-          width: "630px",
+          flexShrink: 0,
+          height: "1792px",
+          objectFit: "cover",
+          width: "1792px",
         }}
-        width="630"
+        width="1792"
       />
     </div>,
     size,
