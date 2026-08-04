@@ -17,7 +17,7 @@ export default async function OpenGraphImage() {
     <div
       style={{
         alignItems: "center",
-        background: "#0d120f",
+        background: "#000000",
         display: "flex",
         height: "100%",
         justifyContent: "center",

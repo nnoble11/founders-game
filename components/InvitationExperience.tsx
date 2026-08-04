@@ -93,8 +93,14 @@ export default function InvitationExperience({
     }
   };
 
-  const reveal = () => {
-    if (revealed) return;
+  const toggleReveal = () => {
+    if (revealed) {
+      setRevealed(false);
+      setOrientationEnabled(false);
+      setTilt(0, 0);
+      return;
+    }
+
     setRevealed(true);
     void requestOrientation();
   };
@@ -121,7 +127,6 @@ export default function InvitationExperience({
 
   return (
     <main className="invite-shell">
-      <div className="invite-ambient" aria-hidden="true" />
       <section className="invite-experience" aria-labelledby="invite-title">
         <h1 id="invite-title" className="sr-only">
           Your Founders Game invitation
@@ -130,9 +135,9 @@ export default function InvitationExperience({
         <button
           type="button"
           className="invite-card-button"
-          aria-label={revealed ? "Founders Game invitation" : "Reveal invitation"}
+          aria-label={revealed ? "Turn invitation face down" : "Reveal invitation"}
           aria-pressed={revealed}
-          onClick={reveal}
+          onClick={toggleReveal}
           onPointerLeave={() => setTilt(0, 0)}
           onPointerMove={handlePointerMove}
         >
