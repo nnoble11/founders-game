@@ -5,9 +5,8 @@ poker nights seating founders and investors at the same table.
 
 ## Stack
 
-Next.js (App Router) + TypeScript + Tailwind CSS v4, Three.js via
-@react-three/fiber for the hero chips, framer-motion for scroll scrub and
-section reveals. Deploys on Vercel.
+Next.js (App Router) + TypeScript + Tailwind CSS v4, framer-motion for the
+hero's scroll scrub and section reveals. Deploys on Vercel.
 
 ## Develop
 
@@ -18,10 +17,10 @@ npm run dev
 
 ## Notes
 
-- The three hero chips are procedural Three.js placeholders; a rendered chip
-  video will replace them later. The scroll scrub plumbing stays the same.
-- `prefers-reduced-motion` freezes the hero at a static frame and disables
-  reveals; no-WebGL browsers get a flat CSS fallback.
+- The three hero chips are a rendered video (`public/test01.mp4`) scrubbed
+  directly by scroll position, so scrolling back plays the motion in reverse.
+- `prefers-reduced-motion` freezes the hero video at a static frame and
+  disables reveals.
 
 ## Private invitation
 

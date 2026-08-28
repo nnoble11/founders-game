@@ -14,7 +14,8 @@ founderspoker.com.
 ## The site is ONE page: hero, one statement, footer
 
 ### 1. Hero — the scroll-driven chips (the signature element)
-- Full-viewport hero. Center: three 3D poker chips (will provide rendered video later).
+- Full-viewport hero. Center: three 3D poker chips, delivered as a rendered
+  video (public/test01.mp4) scrubbed by scroll position.
 - Scroll behavior: as the user scrolls through the hero, one chip rises,
   one chip descends, the third stays anchored (so as the user scrolls the video "plays").
   Motion is bound directly to scroll position (scrubbed, not
@@ -117,7 +118,8 @@ swap in the real number, keep the flat delivery.
 
 ## Tech stack
 - Next.js (App Router) + TypeScript + Tailwind CSS
-- Three.js via @react-three/fiber + @react-three/drei for the hero
+- Hero chips are a rendered video (public/test01.mp4), scrubbed by scroll —
+  no 3D/WebGL runtime. framer-motion drives the scroll progress that seeks it.
 - framer-motion for scroll progress and section reveals (subtle only)
 - Deploy: Vercel. Analytics: Vercel Analytics or Plausible.
 - Forms: none mounted for MVP (the application is dormant and submissions are
