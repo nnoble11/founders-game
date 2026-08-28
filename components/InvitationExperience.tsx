@@ -111,7 +111,7 @@ export default function InvitationExperience({
 
         <div className={revealed ? "invite-actions is-visible" : "invite-actions"} aria-hidden={!revealed}>
           <p className="invite-game-line">
-            San Francisco {"\u00b7"} Game I
+            New York City {"\u00b7"} Game I
           </p>
           <p>By invitation only</p>
           <a
