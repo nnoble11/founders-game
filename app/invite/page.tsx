@@ -1,6 +1,6 @@
 import InvitationExperience from "@/components/InvitationExperience";
 
-const DEFAULT_LUMA_URL = "https://luma.com/3zvkzpzc";
+const DEFAULT_LUMA_URL = "https://luma.com/pblc1kfs";
 
 function httpUrl(value: string | undefined) {
   if (!value) return undefined;
