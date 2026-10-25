@@ -189,7 +189,8 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 0.65rem;
+  /* Tuned so the visible gap above the button equals the one below it */
+  gap: 0.84rem;
   width: fit-content;
 }
 
