@@ -110,18 +110,20 @@ export default function InvitationExperience({
         </p>
 
         <div className={revealed ? "invite-actions is-visible" : "invite-actions"} aria-hidden={!revealed}>
-          <p className="invite-game-line">
-            New York City {"\u00b7"} Game II
-          </p>
-          <a
-            className="invite-rsvp"
-            href={lumaUrl}
-            rel="noopener"
-            tabIndex={revealed ? 0 : -1}
-            target="_blank"
-          >
-            Take your seat
-          </a>
+          <div className="invite-lockup">
+            <p className="invite-game-line">
+              New York City {"\u00b7"} Game II
+            </p>
+            <a
+              className="invite-rsvp"
+              href={lumaUrl}
+              rel="noopener"
+              tabIndex={revealed ? 0 : -1}
+              target="_blank"
+            >
+              Take your seat
+            </a>
+          </div>
           <a
             className="invite-home-link"
             href="/"

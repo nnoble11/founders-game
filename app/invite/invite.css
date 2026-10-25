@@ -183,12 +183,27 @@
   letter-spacing: 0.28em;
 }
 
+/* Sized by the game line; the button stretches to match it exactly */
+.invite-lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.65rem;
+  width: fit-content;
+}
+
+/* Cancel the trailing letter-spacing so the width ends at the last glyph */
+.invite-lockup .invite-game-line {
+  margin-inline-end: -0.28em;
+}
+
 .invite-rsvp {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 13.5rem;
-  padding: 0.92rem 1.6rem;
+  /* Ignore the label's own width so the game line alone sets the lockup width */
+  contain: inline-size;
+  padding: 0.92rem 1rem;
   border: 1px solid color-mix(in srgb, var(--color-bone) 65%, transparent);
   border-radius: 5px;
   background: transparent;
