@@ -187,24 +187,23 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 1.25rem;
   min-width: 13.5rem;
-  padding: 0.92rem 1.4rem;
-  border: 1px solid var(--color-bone);
+  padding: 0.92rem 1.6rem;
+  border: 1px solid color-mix(in srgb, var(--color-bone) 65%, transparent);
   border-radius: 9999px;
-  background: var(--color-bone);
-  color: var(--color-night);
+  background: transparent;
+  color: var(--color-bone);
   font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
+  font-weight: 700;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
 }
 
 .invite-rsvp:hover {
-  transform: translateY(-2px);
-  background: transparent;
-  color: var(--color-bone);
+  border-color: var(--color-bone);
+  background: var(--color-bone);
+  color: var(--color-night);
 }
 
 .invite-rsvp:focus-visible {
@@ -216,11 +215,10 @@
   margin-top: 0.15rem;
   border-bottom: 1px solid color-mix(in srgb, var(--color-bone) 20%, transparent);
   color: color-mix(in srgb, var(--color-bone) 48%, transparent);
-  font-size: 0.58rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
   line-height: 1.8;
-  text-transform: uppercase;
   transition: border-color 180ms ease, color 180ms ease;
 }
 
