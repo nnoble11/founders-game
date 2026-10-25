@@ -106,7 +106,7 @@ export default function InvitationExperience({
         </button>
 
         <p className={revealed ? "invite-prompt is-hidden" : "invite-prompt"} aria-hidden={revealed}>
-          Tap
+          tap
         </p>
 
         <div className={revealed ? "invite-actions is-visible" : "invite-actions"} aria-hidden={!revealed}>
@@ -129,7 +129,7 @@ export default function InvitationExperience({
             href="/"
             tabIndex={revealed ? 0 : -1}
           >
-            Main site
+            main site
           </a>
         </div>
       </section>
