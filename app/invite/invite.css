@@ -138,10 +138,11 @@
 .invite-prompt {
   margin-top: clamp(1.7rem, 4vh, 2.8rem);
   color: color-mix(in srgb, var(--color-bone) 58%, transparent);
-  font-size: 0.64rem;
-  font-weight: 650;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  /* Matches .invite-home-link */
+  font-size: 0.75rem;
+  font-stretch: 125%;
+  font-weight: 900;
+  letter-spacing: -0.01em;
   transition: opacity 350ms ease;
 }
 
